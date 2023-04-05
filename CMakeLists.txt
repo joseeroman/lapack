@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(LAPACK Fortran C)
+project(LAPACK Fortran)
 
 set(LAPACK_MAJOR_VERSION 3)
 set(LAPACK_MINOR_VERSION 11)
@@ -359,6 +359,7 @@ option(CBLAS "Build CBLAS" OFF)
 
 if(CBLAS)
   add_subdirectory(CBLAS)
+  enable_language(C)
 endif()
 
 # --------------------------------------------------
@@ -450,6 +451,7 @@ unset(LAPACK_INSTALL_EXPORT_NAME_CACHE)
 
 if(LAPACKE)
   add_subdirectory(LAPACKE)
+  enable_language(C)
 endif()
 
 
